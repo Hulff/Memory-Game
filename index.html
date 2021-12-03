@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memory game</title>
+    <meta charset="UTF-8">
+    <meta lang="pt-br">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+      <img src="./imgs/logo doida.svg">
+      <h1>Memory Game</h1>
+    </header>
+    <main>
+      <div class="container1">
+        <button id="btn-start" onclick="start()">Start</button>
+      </div>
+      <div class="container2">
+        <ul>
+          <li>
+            <div onclick="clickRed()" class="cores" id="cor1"></div>
+          </li>
+          <li>
+            <div  onclick="clickYellow()"  class="cores" id="cor2"></div>
+          </li>
+          <li>
+            <div  onclick="clickBlue()" class="cores" id="cor3"></div>
+          </li>
+          <li>
+            <div  onclick="clickGreen()"class="cores" id="cor4"></div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
