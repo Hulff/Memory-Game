@@ -74,6 +74,13 @@ function clickRed() {
         Trys.innerHTML ='errou'
       }
     } else {
+      for(i=0;i<listaJogador.length;i++) {
+        if (listaNumeros[i] == listaJogador[i]) {
+          console.log("bateu")
+        } else if  (listaNumeros[i] != listaJogador[i]) {
+          Trys.innerHTML ='errou'
+        }
+      }
     }
     return numeroTentativa
 }
@@ -85,6 +92,7 @@ function clickYellow() {
     numeroTentativa--
     contarTentativas(numeroTentativa)
     if (numeroTentativa == 0) {
+ if (numeroTentativa == 0) {
       if (JSON.stringify(listaNumeros)===JSON.stringify(listaJogador)) {
         start()
         listaJogador = []
@@ -92,8 +100,16 @@ function clickYellow() {
         Trys.innerHTML ='errou'
       }
     } else {
+      for(i=0;i<listaJogador.length;i++) {
+        if (listaNumeros[i] == listaJogador[i]) {
+          console.log("bateu")
+        } else if  (listaNumeros[i] != listaJogador[i]) {
+          Trys.innerHTML ='errou'
+        }
+      }
     }
     return numeroTentativa
+}
 }
 function clickBlue() {
   console.log("blue")
@@ -110,9 +126,17 @@ function clickBlue() {
         Trys.innerHTML ='errou'
       }
     } else {
+      for(i=0;i<listaJogador.length;i++) {
+        if (listaNumeros[i] == listaJogador[i]) {
+          console.log("bateu")
+        } else if  (listaNumeros[i] != listaJogador[i]) {
+          Trys.innerHTML ='errou'
+        }
+      }
     }
     return numeroTentativa
 }
+
 
 function clickGreen() {
   console.log("green")
@@ -128,6 +152,13 @@ function clickGreen() {
         Trys.innerHTML ='errou'
       }
     } else {
+      for(i=0;i<listaJogador.length;i++) {
+        if (listaNumeros[i] == listaJogador[i]) {
+          console.log("bateu")
+        } else if  (listaNumeros[i] != listaJogador[i]) {
+          Trys.innerHTML ='errou'
+        }
+      }
     }
     return numeroTentativa
 }
