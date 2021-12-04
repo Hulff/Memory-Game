@@ -54,6 +54,16 @@ main div button {
   font-size: 3vh;
   padding: 1px;
 }
+.btn {
+  font-weight: 700;
+  color:black;
+  border-radius: 8px;
+  border-style: solid;
+  width: 15vh;
+  border-width: thin;
+  font-size: 3vh;
+  padding: 1px;
+}
 
 main div ul {
   display: flex;
@@ -82,20 +92,14 @@ main div ul li div {
   background-color: yellow;
 }
 #cor3 {
-  background-color:blue
+  background-color: blue
 }
 #cor4 {
-  background-color:green
+  background-color: green
 }
 
 .cores{
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility,opacity 2s;
+  transition: background-color 1,5s;
 }
 
-.coresVisiveis {
-  visibility:visible;
-  opacity: 1;
-}
 
