@@ -7,6 +7,8 @@ const cor2 = document.querySelector('#cor2')
 const cor3 = document.querySelector('#cor3')
 const cor4 = document.querySelector('#cor4')
 
+
+
 let listaNumeros = [0]
 listaNumeros = []; 
 let listaJogador = [0]
@@ -30,26 +32,51 @@ function sortear() {
 
 function contarTentativas(numeroTentativas) {
   Trys.innerHTML = "clicks restantes :"+ numeroTentativas
-} 
-function lerLista() {
 }
-function mostrarCor(){
-  for (i=0;i<listaNumeros.length;i++) {
-    if (listaNumeros[i] == 1 ) {
-    cor1.style.backgroundColor = 'lightred'
-    } else if (listaNumeros[i] == 2 ) {
-    cor2.style.backgroundColor = 'lightyellow'
-    } else if (listaNumeros[i] == 3 ) {
-    cor3.style.backgroundColor = 'lightblue'
-    } else if (listaNumeros[i] == 4 ) {
+
+function mostrarCor2(i) {
+  if (listaNumeros[i]=== 1) {
+    cor1.style.backgroundColor = 'red'
+    cor1.ontransitionend = () => {
+      cor1.style.backgroundColor = 'maroon'
+      console.log('terminou')
+    };
+  } else if  (listaNumeros[i]===2) {
+    cor2.style.backgroundColor = 'yellow'
+    cor2.ontransitionend = () => {
+      cor2.style.backgroundColor = 'gold'
+      console.log('terminou')
+
+    };
+  } else if  (listaNumeros[i]===3) {
+    cor3.style.backgroundColor = 'blue'
+    cor3.ontransitionend = () => {
+      cor3.style.backgroundColor = 'midnightblue'
+      console.log('terminou')
+
+    }
+  } else if  (listaNumeros[i]===4) {
     cor4.style.backgroundColor = 'lightgreen'
+    cor4.ontransitionend = () => {
+      cor4.style.backgroundColor = 'green'
+      console.log('terminou')
+
     }
   }
 }
 
+function mostrarCor(item,index) {
+  mostrarCor2(index)
+}
+
 function start() {
 
-  sortear();
+  sortear();  
+
+  cor1.style.backgroundColor = 'maroon'
+  cor2.style.backgroundColor = 'gold'
+  cor3.style.backgroundColor = 'midnightblue'
+  cor4.style.backgroundColor = 'green'
 
   numeroRodada++
   numeroTentativa = numeroRodada
@@ -57,6 +84,8 @@ function start() {
 
   contarTentativas(numeroTentativa)
   console.log("rodada:"+numeroRodada)
+  
+  setTimeout(listaNumeros.forEach(mostrarCor),1500)
 
   return numeroRodada,numeroTentativa
 }
@@ -92,7 +121,6 @@ function clickYellow() {
     numeroTentativa--
     contarTentativas(numeroTentativa)
     if (numeroTentativa == 0) {
- if (numeroTentativa == 0) {
       if (JSON.stringify(listaNumeros)===JSON.stringify(listaJogador)) {
         start()
         listaJogador = []
@@ -110,7 +138,7 @@ function clickYellow() {
     }
     return numeroTentativa
 }
-}
+
 function clickBlue() {
   console.log("blue")
 
