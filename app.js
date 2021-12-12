@@ -93,21 +93,21 @@ function acenderDiv(numero) {
       red.classList.add('ativo')
       setTimeout(() => {
         red.classList.remove('ativo');
-      }, 300);
+      }, 400);
     } else if (numero == 2) {
       yellow.classList.add('ativo')
       setTimeout(() => {
         yellow.classList.remove('ativo');
-      }, 300);
+      }, 400);
     } else if (numero == 3) {
       blue.classList.add('ativo')
       setTimeout(() => {
         blue.classList.remove('ativo');
-      }, 300);
+      }, 400);
     }else if (numero == 4) {
       green.classList.add('ativo')
       setTimeout(() => {
         green.classList.remove('ativo');
-      }, 300)
+      }, 400)
     }},700)
 }
