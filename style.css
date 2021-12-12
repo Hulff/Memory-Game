@@ -90,19 +90,15 @@ body > main > div > div {
 .green-block:focus {
   background-color: rgb(95, 255, 95)
 }
-.red-block:active,
 .red-block.ativo {
   background-color: rgb(142, 0, 0);
 }
-.yellow-block:active,
 .yellow-block.ativo {
   background-color: rgb(142, 142, 0)
 }
-.blue-block:active,
 .blue-block.ativo {
   background-color: rgb(0, 0, 142)
 }
-.green-block:active,
 .green-block.ativo {
   background-color: rgb(0, 142, 0)
 }
