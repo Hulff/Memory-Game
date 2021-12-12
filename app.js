@@ -26,37 +26,32 @@ function gerarLista(numeroSortedo) {
 function adicionarNumeroDoJogador(cor) {
   if (cor == 'red') {
     listaJogador.push(1)
-    if(clicksRestantes-1 != 0 ) {
+    if(clicksRestantes != 0 ) {
       reduzirClicks()
-    } else {
-      começar()
-    }
+      compararListas()
+    } 
   } else if (cor == 'yellow') {
     listaJogador.push(2)
-    if(clicksRestantes-1 != 0 ) {
+    if(clicksRestantes !=  0 ) {
       reduzirClicks()
-    } else {
-      começar()
+      compararListas()
     }
   } else if (cor == 'blue') {
     listaJogador.push(3)
-    if(clicksRestantes-1 != 0 ) {
+    if(clicksRestantes != 0 ) {
       reduzirClicks()
-    } else {
-      começar()
-    }
+      compararListas()
+    } 
   } else if (cor == 'green') {
     listaJogador.push(4)
-    if(clicksRestantes-1 != 0 ) {
+    if(clicksRestantes != 0 ) {
       reduzirClicks()
-    } else {
-      começar()
+      compararListas()
     }
   }
-  compararListas()
 }
 function compararListas() {
-  for(i=0;i<=listaJogador.length;i++){
+  for(i=0;i<listaJogador.length;i++){
   if(listaGerada[i]==listaJogador[i]) {
      console.log('bateu')
   } else {
@@ -95,6 +90,9 @@ function atualizarTexto (numeroDaRodada,clicksRestantes) {
 function reduzirClicks () {
   clicksRestantes--
   clicks.innerText = "Clicks Restantes:"+ clicksRestantes
+  if (clicksRestantes == 0) {
+    começar()
+  }
 }
 function lerLista () {
   for (let i=0;i<listaGerada.length;i++) {
