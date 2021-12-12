@@ -8,6 +8,7 @@ const yellow = document.getElementById('yellow')
 const blue = document.getElementById('blue')
 const green = document.getElementById('green')
 
+
 let listaGerada = [];
 let listaJogador = [];
 let rodada = 0
@@ -23,32 +24,12 @@ function gerarLista(numeroSortedo) {
   listaGerada.push(numeroSortedo)
   return listaGerada
 }
-function adicionarNumeroDoJogador(cor) {
-  if (cor == 'red') {
-    listaJogador.push(1)
+function adicionarNumeroDoJogador(numero) {
+    listaJogador.push(numero)
     if(clicksRestantes != 0 ) {
       reduzirClicks()
       compararListas()
     } 
-  } else if (cor == 'yellow') {
-    listaJogador.push(2)
-    if(clicksRestantes !=  0 ) {
-      reduzirClicks()
-      compararListas()
-    }
-  } else if (cor == 'blue') {
-    listaJogador.push(3)
-    if(clicksRestantes != 0 ) {
-      reduzirClicks()
-      compararListas()
-    } 
-  } else if (cor == 'green') {
-    listaJogador.push(4)
-    if(clicksRestantes != 0 ) {
-      reduzirClicks()
-      compararListas()
-    }
-  }
 }
 function compararListas() {
   for(i=0;i<listaJogador.length;i++){
@@ -107,7 +88,8 @@ function loop(i,numero) {
 }
 
 function acenderDiv(numero) {
- setTimeout(()=>{ if (numero == 1) {
+ setTimeout(()=>{ 
+   if (numero == 1) {
       red.classList.add('ativo')
       setTimeout(() => {
         red.classList.remove('ativo');

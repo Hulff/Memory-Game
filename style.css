@@ -74,22 +74,7 @@ body > main > div > div {
   transition: background-color 0.5s;
 }
 
-.red-block:hover,
-.red-block:focus {
-  background-color: rgb(255, 92, 92);
-}
-.yellow-block:hover,
-.yellow-block:focus {
-  background-color: rgb(255, 255, 92)
-}
-.blue-block:hover,
-.blue-block:focus {
-  background-color: rgb(95, 95, 255)
-}
-.green-block:hover,
-.green-block:focus {
-  background-color: rgb(95, 255, 95)
-}
+
 .red-block:active,
 .red-block.ativo {
   background-color: rgb(142, 0, 0);
