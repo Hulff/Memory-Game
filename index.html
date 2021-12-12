@@ -9,6 +9,15 @@
   <body>
     <header>
       <h1>Jogo da Memória</h1>
+      <div class="tooltip">
+        <h2 class="text-controles">controles</h2>
+        <span class="tooltiptext">
+          q para vermelho<br>
+          w para amarelo<br>
+          a para azul<br>
+          s para verde
+        </span>
+      </div>
       <div>
         <button class="btn-start" id="start"  onclick="começar()">Começar</button>
         <h2 id="round"></h2 >
@@ -23,6 +32,9 @@
       <div>
         <div class="blue-block" onclick="adicionarNumeroDoJogador('3')" id="blue"></div>
         <div class="green-block" onclick="adicionarNumeroDoJogador('4')" id="green"></div>
+      </div>
+      <div>
+        <h2 class="text-status" id="status">Reproduzindo Sequência</h2>
       </div>
     </main>
     <script src="./app.js"></script>

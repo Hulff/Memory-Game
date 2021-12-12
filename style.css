@@ -96,3 +96,41 @@ body > main > div > div {
 .btn-start:focus {
   background-color: rgb(77, 77, 77);
 }
+
+.tooltip {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+}
+.text-controles {
+  margin-right: 3%;
+  margin-left: 2%;
+  font-size: 2.5vh;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 20%;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 1.5vh;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.text-status {
+  font-size: 3vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility,opacity 2s;
+}
+.text-status.visible {
+  visibility: visible;
+  opacity: 1000;
+  transition: visibility,opacity 2s;
+}

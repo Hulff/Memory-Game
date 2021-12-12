@@ -2,6 +2,7 @@
 const start = document.getElementById('start')
 const round = document.getElementById('round')
 const clicks = document.getElementById('clicks')
+const status = document.getElementById('status')
 
 const red = document.getElementById('red')
 const yellow = document.getElementById('yellow')
@@ -13,6 +14,24 @@ let listaGerada = [];
 let listaJogador = [];
 let rodada = 0
 let clicksRestantes = 0
+
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'q') {
+    adicionarNumeroDoJogador(1)
+  }
+  if (event.key === 'w') {
+    adicionarNumeroDoJogador(2)
+  }
+  if (event.key === 'a') {
+    adicionarNumeroDoJogador(3)
+  }
+  if (event.key === 's') {
+    adicionarNumeroDoJogador(4)
+  }
+});
+
+
 
 function sortearNumero () {
   let numeroSortedo = ((Math.floor(Math.random() * 4))+1)
@@ -48,6 +67,8 @@ function reset() {
   rodada = 0
   clicksRestantes = 0
 
+  start.style.visibility = "visible"
+
   return rodada,clicksRestantes,listaGerada
 }
 function começar () {
@@ -60,7 +81,9 @@ function começar () {
 
   lerLista()
 
-  listaJogador = []
+  listaJogador = [];
+
+  start.style.visibility = "hidden"
 
   return rodada,clicksRestantes,listaJogador
 }
@@ -79,7 +102,11 @@ function lerLista () {
   for (let i=0;i<listaGerada.length;i++) {
     let numero = listaGerada[i]
     loop(i,numero)
+    status.classList.add("visible")
   }
+  setTimeout(() => {
+    status.classList.remove("visible")
+  }, ((1000*rodada)+500))
 }
 function loop(i,numero) {
   setTimeout(()=> {
