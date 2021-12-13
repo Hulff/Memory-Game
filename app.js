@@ -3,6 +3,7 @@ const start = document.getElementById('start')
 const round = document.getElementById('round')
 const clicks = document.getElementById('clicks')
 const status = document.getElementById('status')
+const recordeText = document.getElementById('recorde')
 
 const red = document.getElementById('red')
 const yellow = document.getElementById('yellow')
@@ -14,6 +15,8 @@ let listaGerada = [];
 let listaJogador = [];
 let rodada = 0
 let clicksRestantes = 0
+
+let recorde = 0 
 
 
 document.addEventListener('keydown', function (event) {
@@ -64,14 +67,26 @@ function reset() {
   round.innerText = ''
   clicks.innerText = ''
   listaGerada = []
+  if (recorde<rodada) {
+  recorde = rodada
+  salvarRecorde(recorde)
+  } else if (recorde> rodada) {
+    salvarRecorde(recorde)
+  }
   rodada = 0
   clicksRestantes = 0
 
   start.style.visibility = "visible"
 
-  return rodada,clicksRestantes,listaGerada
+  return rodada,clicksRestantes,listaGerada,recorde
+}
+function salvarRecorde (recorde) {
+  recordeText.innerHTML = "Maior Rodada:"+recorde
 }
 function começar () {
+  
+  recordeText.innerHTML = ""
+
   rodada++
   clicksRestantes = rodada
 
