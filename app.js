@@ -10,6 +10,8 @@ const yellow = document.getElementById('yellow')
 const blue = document.getElementById('blue')
 const green = document.getElementById('green')
 
+let estado = "finished"
+
 
 let listaGerada = [];
 let listaJogador = [];
@@ -38,7 +40,6 @@ document.addEventListener('keydown', function (event) {
 
 function sortearNumero () {
   let numeroSortedo = ((Math.floor(Math.random() * 4))+1)
-  console.log(numeroSortedo)
   gerarLista(numeroSortedo)
   return numeroSortedo, listaGerada
 }
@@ -47,22 +48,27 @@ function gerarLista(numeroSortedo) {
   return listaGerada
 }
 function adicionarNumeroDoJogador(numero) {
+  if ( estado == "finished") {
     listaJogador.push(numero)
+    acenderDiv(numero)
     if(clicksRestantes != 0 ) {
-      reduzirClicks()
       compararListas()
+      reduzirClicks()
     } 
+  } else if (estado == "reading") {
+    console.log("reproduzindo sequencia")
+  }
 }
 function compararListas() {
-  for(i=0;i<listaJogador.length;i++){
+  let i = listaJogador.length-1
   if(listaGerada[i]==listaJogador[i]) {
      console.log('bateu')
   } else {
     console.log('errou')
     reset()
   }
- }
 }
+
 function reset() {
   round.innerText = ''
   clicks.innerText = ''
@@ -94,7 +100,7 @@ function começar () {
 
   sortearNumero()
 
-  lerLista()
+  setTimeout(()=>{lerLista()},500)
 
   listaJogador = [];
 
@@ -118,38 +124,45 @@ function lerLista () {
     let numero = listaGerada[i]
     loop(i,numero)
     status.classList.add("visible")
+    
+    estado = "reading"
+
   }
   setTimeout(() => {
-    status.classList.remove("visible")
+    estado = "finished"
+    status.classList.remove("visible");
+    return estado
   }, ((1000*rodada)+500))
 }
 function loop(i,numero) {
   setTimeout(()=> {
-     acenderDiv(numero)
+    setTimeout(() => {
+      acenderDiv(numero)
+    },700)
   }, 1000 * i);
 }
 
 function acenderDiv(numero) {
- setTimeout(()=>{ 
    if (numero == 1) {
       red.classList.add('ativo')
       setTimeout(() => {
         red.classList.remove('ativo');
-      }, 400);
+      }, 300);
     } else if (numero == 2) {
       yellow.classList.add('ativo')
       setTimeout(() => {
         yellow.classList.remove('ativo');
-      }, 400);
+      }, 300);
     } else if (numero == 3) {
       blue.classList.add('ativo')
       setTimeout(() => {
         blue.classList.remove('ativo');
-      }, 400);
+      }, 300);
     }else if (numero == 4) {
       green.classList.add('ativo')
       setTimeout(() => {
         green.classList.remove('ativo');
-      }, 400)
-    }},700)
+      }, 300)
+    }
 }
+
