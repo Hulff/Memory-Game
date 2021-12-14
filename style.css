@@ -73,6 +73,21 @@ body > main > div > div {
   background-color: rgb(0, 255, 0);
   transition: background-color 0.5s;
 }
+.purple-block {
+  background-color: rgb(128, 0, 128);
+  transition: background-color 0.5s;
+  margin-right: 25px;
+}
+.orange-block {
+  background-color: rgb(255, 68, 0);
+  transition: background-color 0.5s;
+}
+.purple-block.hidden {
+  visibility: hidden;
+}
+.orange-block.hidden {
+  visibility: hidden;
+}
 
 
 .red-block:active,
@@ -90,6 +105,15 @@ body > main > div > div {
 .green-block:active,
 .green-block.ativo {
   background-color: rgb(0, 142, 0)
+
+}
+.purple-block:active,
+.purple-block.ativo {
+  background-color: rgb(85, 0, 85);;
+}
+.orange-block:active,
+.orange-block.ativo {
+  background-color: rgb(157, 42, 0);
 }
 
 .btn-start:hover,
@@ -98,13 +122,14 @@ body > main > div > div {
 }
 
 .tooltip {
-  height: 10vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  align-content: center;
+  width: 27vh;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
 }
 .text-controles {
   margin-right: 3%;
@@ -113,14 +138,16 @@ body > main > div > div {
 }
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 20%;
-  background-color: transparent;
-  color: rgb(0, 0, 0);
+  background-color: grey;
+  color: rgb(255 255 255);
   font-size: 1.5vh;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  width: 100%;
+  padding: 5px;
+  border-radius: 11px;
 }
 
 .text-status {
