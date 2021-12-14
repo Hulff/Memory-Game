@@ -1,4 +1,3 @@
-
 const start = document.getElementById('start')
 const round = document.getElementById('round')
 const clicks = document.getElementById('clicks')
@@ -9,15 +8,18 @@ const red = document.getElementById('red')
 const yellow = document.getElementById('yellow')
 const blue = document.getElementById('blue')
 const green = document.getElementById('green')
+const purple = document.getElementById('purple')
+const orange = document.getElementById('orange')
 
 let estado = "finished"
+
+const listaCores = [red,yellow,blue,green,purple,orange]
 
 
 let listaGerada = [];
 let listaJogador = [];
 let rodada = 0
 let clicksRestantes = 0
-
 let recorde = 0 
 
 
@@ -34,12 +36,20 @@ document.addEventListener('keydown', function (event) {
   if (event.key === 's') {
     adicionarNumeroDoJogador(4)
   }
+  if (event.keyCode === 13) {
+    if (start.style.visibility != 'hidden'){
+      começar()
+    }
+  }
 });
 
 
+purple.classList.add('hidden')
+orange.classList.add('hidden')
 
-function sortearNumero () {
-  let numeroSortedo = ((Math.floor(Math.random() * 4))+1)
+
+function sortearNumero (n) {
+  let numeroSortedo = ((Math.floor(Math.random() * n))+1)
   gerarLista(numeroSortedo)
   return numeroSortedo, listaGerada
 }
@@ -51,8 +61,7 @@ function adicionarNumeroDoJogador(numero) {
   if ( estado == "finished") {
     listaJogador.push(numero)
     acenderDiv(numero)
-    if(clicksRestantes != 0 ) {
-      compararListas()
+    if( clicksRestantes != 0 && compararListas() == true  ) {
       reduzirClicks()
     } 
   } else if (estado == "reading") {
@@ -63,15 +72,17 @@ function compararListas() {
   let i = listaJogador.length-1
   if(listaGerada[i]==listaJogador[i]) {
      console.log('bateu')
+     return true
   } else {
     console.log('errou')
     reset()
+    resetText()
+
+    return false
   }
 }
 
 function reset() {
-  round.innerText = ''
-  clicks.innerText = ''
   listaGerada = []
   if (recorde<rodada) {
   recorde = rodada
@@ -82,9 +93,12 @@ function reset() {
   rodada = 0
   clicksRestantes = 0
 
-  start.style.visibility = "visible"
-
   return rodada,clicksRestantes,listaGerada,recorde
+}
+function resetText () {
+  round.innerText = ''
+  clicks.innerText = ''
+  start.style.visibility = "visible"
 }
 function salvarRecorde (recorde) {
   recordeText.innerHTML = "Maior Rodada:"+recorde
@@ -98,7 +112,7 @@ function começar () {
 
   atualizarTexto(rodada,clicksRestantes)
 
-  sortearNumero()
+  sortearNumero(4)
 
   setTimeout(()=>{lerLista()},500)
 
@@ -143,26 +157,8 @@ function loop(i,numero) {
 }
 
 function acenderDiv(numero) {
-   if (numero == 1) {
-      red.classList.add('ativo')
+      listaCores[numero-1].classList.add('ativo')
       setTimeout(() => {
-        red.classList.remove('ativo');
+      listaCores[numero-1].classList.remove('ativo')
       }, 300);
-    } else if (numero == 2) {
-      yellow.classList.add('ativo')
-      setTimeout(() => {
-        yellow.classList.remove('ativo');
-      }, 300);
-    } else if (numero == 3) {
-      blue.classList.add('ativo')
-      setTimeout(() => {
-        blue.classList.remove('ativo');
-      }, 300);
-    }else if (numero == 4) {
-      green.classList.add('ativo')
-      setTimeout(() => {
-        green.classList.remove('ativo');
-      }, 300)
-    }
 }
-
