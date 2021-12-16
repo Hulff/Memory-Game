@@ -1,4 +1,4 @@
-
+const body = document.querySelector('#el-body')
 const col3 = document.querySelector('.col-3')
 const start = document.getElementById('start')
 const hard = document.getElementById('hard')
@@ -32,7 +32,9 @@ if (width > 980) {
   console.log(width)
   col3.style.flexDirection = 'column'
   orange.style.marginLeft = '-10px'
-}
+  body.style.backgroundImage = " url(./imgs/Untitled_Copy_.svg)"
+} 
+
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'q') {
