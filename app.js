@@ -1,3 +1,5 @@
+
+const col3 = document.querySelector('.col-3')
 const start = document.getElementById('start')
 const hard = document.getElementById('hard')
 const round = document.getElementById('round')
@@ -23,6 +25,14 @@ let rodada = 0
 let clicksRestantes = 0
 let recorde = 0 
 
+let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+if (width > 980 ) {
+  console.log(width)
+  col3.style.flexDirection = 'column'
+  orange.style.marginLeft = '-10px'  
+}
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'q') {
@@ -43,7 +53,6 @@ document.addEventListener('keydown', function (event) {
     }
   }
 });
-
 
 purple.classList.add('hidden')
 orange.classList.add('hidden')
@@ -114,7 +123,7 @@ function reset() {
 function resetText () {
   round.innerText = ''
   clicks.innerText = ''
-  start.style.visibility = "visible"
+  start.classList.remove('disabled')
 }
 function salvarRecorde (recorde) {
   recordeText.innerHTML = "Maior Rodada:"+recorde
@@ -134,7 +143,7 @@ function começar () {
 
   listaJogador = [];
 
-  start.style.visibility = "hidden"
+  start.classList.add('disabled')
 
   return rodada,clicksRestantes,listaJogador
 }
@@ -177,4 +186,11 @@ function acenderDiv(numero) {
       setTimeout(() => {
       listaCores[numero-1].classList.remove('ativo')
       }, 300);
+}
+function mostrarNovasCores () {
+  purple.style.display = "initial"
+  orange.style.display = "initial"
+
+  purple.classList.remove('hidden')
+  orange.classList.remove('hidden')
 }

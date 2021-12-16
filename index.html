@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body id="el-body">
   <header>
     <h1>Jogo da Memória</h1>
   </header>
@@ -25,12 +25,19 @@
   </aside>
   <main>
     <div class="div-blocks">
-      <div class="red-block" onclick="adicionarNumeroDoJogador('1')" id="red"></div>
-      <div class="yellow-block" onclick="adicionarNumeroDoJogador('2')" id="yellow"></div>
-      <div class="blue-block" onclick="adicionarNumeroDoJogador('3')" id="blue"></div>
-      <div class="green-block" onclick="adicionarNumeroDoJogador('4')" id="green"></div>
-      <div class="purple-block" onclick="adicionarNumeroDoJogador('5')" id="purple"></div>
-      <div class="orange-block" onclick="adicionarNumeroDoJogador('6')" id="orange"></div>
+      <div class="col-1">
+        <div class="red-block" onclick="adicionarNumeroDoJogador('1')" id="red"></div>
+        <div class="blue-block" onclick="adicionarNumeroDoJogador('3')" id="blue"></div>
+      </div>
+      <div class="col-2">
+        <div class="yellow-block" onclick="adicionarNumeroDoJogador('2')" id="yellow"></div>
+        <div class="green-block" onclick="adicionarNumeroDoJogador('4')" id="green"></div>
+      </div>
+      <div class="col-3">
+        <div class="purple-block" onclick="adicionarNumeroDoJogador('5')" id="purple"></div>
+        <div class="orange-block" onclick="adicionarNumeroDoJogador('6')" id="orange"></div>
+      </div>
+      </div>
     </div>
   </main>
   <aside>
