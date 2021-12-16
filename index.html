@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta lang="pt-br">
-    <title>Jogo da Memória</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-    <header>
-      <h1>Jogo da Memória</h1>
-      <div class="tooltip">
-        <h2 class="text-controles">controles</h2>
-        <span class="tooltiptext">
-          q para vermelho<br>
-          w para amarelo<br>
-          a para azul<br>
-          s para verde<br>
-          enter para começar
-        </span>
+
+<head>
+  <meta charset="UTF-8">
+  <meta lang="pt-br">
+  <title> Jogo da Memória</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Jogo da Memória</h1>
+  </header>
+  <aside>
+    <div class="div-utilitários">
+      <div class="div-placar">
+        <h2 id="round"></h2>
+        <h2 id="clicks"></h2>
       </div>
-      <div>
-        <h2 id="recorde"></h2>
-        <button class="btn-start" id="start"  onclick="começar()">Começar</button>
-        <h2 id="round"></h2 >
-        <h2 id="clicks"></h2 >
+      <div class="div-btn">
+        <button class="btn-start" id="start" onclick="começar()">Começar</button>
+        <button class="btn-hardmode" id="hard" onclick="">Hardmode</button>
       </div>
-    </header>
-    <main>
-      <div>
-        <h2 class="text-status" id="status">Reproduzindo Sequência</h2>
-      </div>
-      <div>
-        <div class="red-block" onclick="adicionarNumeroDoJogador('1')" id="red"></div>
-        <div class="yellow-block" onclick="adicionarNumeroDoJogador('2')" id="yellow"></div>
-      </div>
-      <div>
-        <div class="blue-block" onclick="adicionarNumeroDoJogador('3')" id="blue"></div>
-        <div class="green-block" onclick="adicionarNumeroDoJogador('4')" id="green"></div>
-      </div>
-      <div>
-        <div class="purple-block" onclick="adicionarNumeroDoJogador('5')" id="purple"></div>
-        <div class="orange-block" onclick="adicionarNumeroDoJogador('6')" id="orange"></div>
-      </div>
-    </main>
-    <script src="./app.js"></script>
-  </body>
+  </aside>
+  <main>
+    <div class="div-blocks">
+      <div class="red-block" onclick="adicionarNumeroDoJogador('1')" id="red"></div>
+      <div class="yellow-block" onclick="adicionarNumeroDoJogador('2')" id="yellow"></div>
+      <div class="blue-block" onclick="adicionarNumeroDoJogador('3')" id="blue"></div>
+      <div class="green-block" onclick="adicionarNumeroDoJogador('4')" id="green"></div>
+      <div class="purple-block" onclick="adicionarNumeroDoJogador('5')" id="purple"></div>
+      <div class="orange-block" onclick="adicionarNumeroDoJogador('6')" id="orange"></div>
+    </div>
+  </main>
+  <aside>
+    <div>
+      <h2 class="text-status" id="status">Reproduzindo<br> Sequência</h2>
+    </div>
+    <div class="div-recorde">
+      <h2 id="recorde"></h2>
+    </div>
+  </aside>
+  <script src="./app.js"></script>
+</body>
+
 </html>

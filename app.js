@@ -1,4 +1,5 @@
 const start = document.getElementById('start')
+const hard = document.getElementById('hard')
 const round = document.getElementById('round')
 const clicks = document.getElementById('clicks')
 const status = document.getElementById('status')
@@ -47,6 +48,18 @@ document.addEventListener('keydown', function (event) {
 purple.classList.add('hidden')
 orange.classList.add('hidden')
 
+hard.classList.add('disabled')
+
+hard.addEventListener('click' , check())
+
+function check () {
+  if (hard.classList[1] == 'disabled') {
+    console.log('complete a rodada 20 para liberar')
+  } else {
+    
+  }
+}
+
 
 function sortearNumero (n) {
   let numeroSortedo = ((Math.floor(Math.random() * n))+1)
@@ -87,6 +100,9 @@ function reset() {
   if (recorde<rodada) {
   recorde = rodada
   salvarRecorde(recorde)
+  if(recorde>19) {
+    hard.classList.remove('disabled')
+  }
   } else if (recorde> rodada) {
     salvarRecorde(recorde)
   }
