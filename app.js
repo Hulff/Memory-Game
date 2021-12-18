@@ -1,11 +1,15 @@
 const body = document.querySelector('#el-body')
 const col3 = document.querySelector('.col-3')
+const col2 = document.querySelector('.col-2')
 const start = document.getElementById('start')
 const hard = document.getElementById('hard')
 const round = document.getElementById('round')
 const clicks = document.getElementById('clicks')
 const status = document.getElementById('status')
 const recordeText = document.getElementById('recorde')
+const redCircle = document.querySelector('.title-circle-1')
+const blueCircle = document.querySelector('.title-circle-2')
+const yellowCircle = document.querySelector('.title-circle-3')
 
 const red = document.getElementById('red')
 const yellow = document.getElementById('yellow')
@@ -28,12 +32,14 @@ let recorde = 0
 let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
+
+
 if (width > 980) {
   console.log(width)
   col3.style.flexDirection = 'column'
   orange.style.marginLeft = '-10px'
   body.style.backgroundImage = " url(./imgs/Untitled_Copy_.svg)"
-} 
+}
 
 
 document.addEventListener('keydown', function (event) {
@@ -62,6 +68,8 @@ orange.classList.add('hidden')
 hard.classList.add('disabled')
 
 hard.addEventListener('click', check())
+
+
 
 function check() {
   if (hard.classList[1] == 'disabled') {
@@ -161,15 +169,16 @@ function reduzirClicks() {
   }
 }
 function lerLista() {
+  acenderCirculos()
   for (let i = 0; i < listaGerada.length; i++) {
     let numero = listaGerada[i]
     loop(i, numero)
     status.classList.add("visible")
-
     estado = "reading"
 
   }
   setTimeout(() => {
+    apagarCirculos()
     estado = "finished"
     status.classList.remove("visible");
     return estado
@@ -190,9 +199,21 @@ function acenderDiv(numero) {
   }, 300);
 }
 function mostrarNovasCores() {
+  col2.style.marginRight = "3%"
+
   purple.style.display = "initial"
   orange.style.display = "initial"
 
   purple.classList.remove('hidden')
   orange.classList.remove('hidden')
+}
+function acenderCirculos() {
+  redCircle.style.animationName = "red"
+  blueCircle.style.animationName = "blue"
+  yellowCircle.style.animationName = "yellow"
+}
+function apagarCirculos() {
+  redCircle.style.animationName = ""
+  blueCircle.style.animationName = ""
+  yellowCircle.style.animationName = ""  
 }

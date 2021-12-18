@@ -23,11 +23,58 @@ h2 {
 header {
   font-family: 'Raleway', sans-serif;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 header > h1 {
   font-weight: 300;
   font-size: 4.5vh;
   margin-left: 2%;
+}
+header > div {
+  margin-left: 1%;
+  width: 6vh;
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+  align-items: flex-end;
+}
+@keyframes red {
+  0%{background-color: rgb(130, 0, 0);}
+  33% {background-color: red;}
+  65%,100%{background-color: red;}
+}
+@keyframes blue {
+  0%{background-color: blue;}
+  33% {background-color: rgb(0, 0, 130);}
+  66%,100%{background-color: blue;}
+}
+@keyframes yellow {
+  0%{background-color: yellow;}
+  66% {background-color: rgb(130, 130, 0);}
+  100%{background-color: yellow;}
+}
+header > div > div {
+  width: 1vh;
+  height: 1vh;
+  border-radius: 100%;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.title-circle-1 {
+  background-color: red;
+  margin-right: 15%;
+}
+.title-circle-2 {
+  background-color: blue;
+  margin-right: 15%;
+}
+.title-circle-3 {
+  background-color: yellow;
 }
 .div-placar {
   display: flex;
@@ -81,10 +128,12 @@ main {
   font-size: 2vh;  
 }
 .col-1,.col-2,.col-3 {
-  margin-right: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;  
+}
+.col-1 {
+  margin-right: 3%;
 }
 .col-3 {
   flex-direction: row;
