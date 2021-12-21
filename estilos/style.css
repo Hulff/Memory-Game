@@ -6,7 +6,7 @@ html,body {
   min-height: 100%;
 }
 body {
-  background-image: url(./imgs/Untitled_Copy_\ \(1\).svg);
+  background-image: url(./imgs/backgroundSmall.svg);
   display: flex;
   max-width: 100%;
   flex-direction: column;

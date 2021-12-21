@@ -38,7 +38,7 @@ if (width > 980) {
   console.log(width)
   col3.style.flexDirection = 'column'
   orange.style.marginLeft = '-10px'
-  body.style.backgroundImage = " url(./imgs/Untitled_Copy_.svg)"
+  body.style.backgroundImage = " url(./imgs/backgroundBig.svg)"
 }
 
 
