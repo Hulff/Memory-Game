@@ -18,16 +18,24 @@ body {
 }
 h1 {
   margin-left: 3vh;
-  padding: 5%;
+  padding: 0px 5%;
 }
 .lista-links {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50vh;
+
 }
 li {
 
 }
 a {
-
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
 }
 img {
   height: 3vh;
