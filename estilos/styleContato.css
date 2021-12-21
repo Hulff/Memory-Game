@@ -6,7 +6,6 @@ html,body {
   min-height: 100%;
 }
 body {
-  background-image: url(./imgs/backgroundBig.svg);
   display: flex;
   max-width: 100%;
   flex-direction: column;
@@ -16,4 +15,30 @@ body {
   font-weight: 400;
   background-size: cover;
   background-repeat: no-repeat;
+}
+h1 {
+  margin-left: 3vh;
+  padding: 5%;
+}
+.lista-links {
+  list-style: none;
+}
+li {
+
+}
+a {
+
+}
+img {
+  height: 3vh;
+  width: 7vh;
+}
+.img-gmail {
+
+}
+.img-git {
+height: 6vh;
+}
+.img-instagram {
+height: 5vh;
 }
