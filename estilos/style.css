@@ -91,7 +91,7 @@ header > div > div {
   font-weight: 400;
   margin-right: 2%;
 }
-.div-btn > a {
+.div-contato > a {
   font-family: 'Sen', sans-serif;
   outline: none;
   border: none;
@@ -103,6 +103,12 @@ header > div > div {
   padding: 0px 2px;
   text-decoration: none;
   cursor: pointer;
+}
+.div-contato {
+  margin-left: 3vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;  
 }
 .btn-hardmode.disabled, .btn-start.disabled {
   color: rgb(130, 128, 128);;
