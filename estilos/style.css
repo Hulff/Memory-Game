@@ -100,7 +100,7 @@ header > div > div {
   font-weight: 400;
   margin-right: 2%;
   color: black;
-  padding: 0px 2px;
+  padding: 0px 10px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -152,7 +152,7 @@ main {
   align-items: center;  
 }
 .col-1 {
-  margin-right: 3%;
+  margin-right: 2vh;
 }
 .col-3 {
   flex-direction: row;
@@ -169,7 +169,7 @@ main {
 main > div > div > div {
   width: 14vh;
   height: 15vh;
-  margin-bottom: 10%;
+  margin-bottom: 2vh;
 }
 .red-block {
   background-color: rgb(255, 0, 0);
@@ -190,7 +190,7 @@ main > div > div > div {
 .purple-block {
   background-color: rgb(128, 0, 128);
   transition: background-color 0.5s;
-  margin-right: 1vh;
+  margin-right: 2vh;
   display: none;
 }
 .orange-block {
