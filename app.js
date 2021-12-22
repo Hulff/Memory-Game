@@ -28,7 +28,7 @@ let listaJogador = [];
 let rodada = 0
 let clicksRestantes = 0
 let recorde = 0
-let n;
+let a;
 
 let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -68,14 +68,14 @@ orange.classList.add('hidden')
 
 hard.classList.add('disabled')
 
-hard.addEventListener('click', check())
 
 
 
 function check() {
   if (hard.classList[1] == 'disabled') {
-    console.log('complete a rodada 20 para liberar')
+    console.log('botão desabilitado')
   } else {
+    começar(6)
   }
 }
 
@@ -121,7 +121,6 @@ function reset() {
     recorde = rodada
     salvarRecorde(recorde)
     if (recorde > 19) {
-      hard.classList.remove('disabled')
       mostrarNovasCores()
     }
   } else if (recorde > rodada) {
@@ -136,32 +135,44 @@ function resetText() {
   round.innerText = ''
   clicks.innerText = ''
   start.classList.remove('disabled')
+  if (recorde > 19) {
+  hard.classList.remove('disabled')
+  }
 }
 function salvarRecorde(recorde) {
   recordeText.innerHTML = "Maior Rodada:" + recorde
 }
 function começar(n) {
-  n = n
+  a = n
   recordeText.innerHTML = ""
 
   rodada++
+  if (a == 6) {
+  clicksRestantes = 2*rodada
+  } else {
+    clicksRestantes = rodada
+  }
+
 
   atualizarTexto(rodada, clicksRestantes)
 
-  sortearNumero(n)
-  if (n == 6) {
-  sortearNumero(n)
+  sortearNumero(a)
+  if (a==6) {
+    sortearNumero(a)
+    console.log("modo hard")
+  } else {
+    console.log("modo normal")
   }
 
   setTimeout(() => { lerLista() }, 500)
 
-  clicksRestantes = listaCores.length
   
   listaJogador = [];
 
   start.classList.add('disabled')
+  hard.classList.add('disabled')
 
-  return rodada, clicksRestantes, listaJogador, n
+  return rodada, clicksRestantes, listaJogador, a
 }
 function atualizarTexto(numeroDaRodada, clicksRestantes) {
   round.innerText = "Round:" + numeroDaRodada
@@ -171,7 +182,7 @@ function reduzirClicks() {
   clicksRestantes--
   clicks.innerText = "Clicks Restantes:" + clicksRestantes
   if (clicksRestantes == 0) {
-    começar(n)
+    começar(a)
   } 
 }
 function lerLista() {
