@@ -199,7 +199,7 @@ function acenderDiv(numero) {
   }, 300);
 }
 function mostrarNovasCores() {
-  col2.style.marginRight = "3%"
+  col2.style.marginRight = "2vh"
 
   purple.style.display = "initial"
   orange.style.display = "initial"

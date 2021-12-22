@@ -190,7 +190,7 @@ main > div > div > div {
 .purple-block {
   background-color: rgb(128, 0, 128);
   transition: background-color 0.5s;
-  margin-right: 2vh;
+  margin-right: 2vh%;
   display: none;
 }
 .orange-block {
