@@ -28,6 +28,7 @@ let listaJogador = [];
 let rodada = 0
 let clicksRestantes = 0
 let recorde = 0
+let n;
 
 let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -75,12 +76,12 @@ function check() {
   if (hard.classList[1] == 'disabled') {
     console.log('complete a rodada 20 para liberar')
   } else {
-
   }
 }
 
 
 function sortearNumero(n) {
+  console.log('sorteou')
   let numeroSortedo = ((Math.floor(Math.random() * n)) + 1)
   gerarLista(numeroSortedo)
   return numeroSortedo, listaGerada
@@ -121,6 +122,7 @@ function reset() {
     salvarRecorde(recorde)
     if (recorde > 19) {
       hard.classList.remove('disabled')
+      mostrarNovasCores()
     }
   } else if (recorde > rodada) {
     salvarRecorde(recorde)
@@ -138,24 +140,28 @@ function resetText() {
 function salvarRecorde(recorde) {
   recordeText.innerHTML = "Maior Rodada:" + recorde
 }
-function começar() {
-
+function começar(n) {
+  n = n
   recordeText.innerHTML = ""
 
   rodada++
-  clicksRestantes = rodada
 
   atualizarTexto(rodada, clicksRestantes)
 
-  sortearNumero(4)
+  sortearNumero(n)
+  if (n == 6) {
+  sortearNumero(n)
+  }
 
   setTimeout(() => { lerLista() }, 500)
 
+  clicksRestantes = listaCores.length
+  
   listaJogador = [];
 
   start.classList.add('disabled')
 
-  return rodada, clicksRestantes, listaJogador
+  return rodada, clicksRestantes, listaJogador, n
 }
 function atualizarTexto(numeroDaRodada, clicksRestantes) {
   round.innerText = "Round:" + numeroDaRodada
@@ -165,8 +171,8 @@ function reduzirClicks() {
   clicksRestantes--
   clicks.innerText = "Clicks Restantes:" + clicksRestantes
   if (clicksRestantes == 0) {
-    começar()
-  }
+    começar(n)
+  } 
 }
 function lerLista() {
   acenderCirculos()
