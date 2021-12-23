@@ -1,7 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Raleway:wght@300;400;700&family=Shizuru&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pushster&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
-
+@keyframes text-changer1 {
+  0%{font-family: 'Sen';}
+  25%{font-family: 'Press Start 2P';}
+  50%{font-family: 'Staatliches';}
+  75%{font-family: 'Anton';}
+  100%{font-family: 'Pushster';}
+  
+}
+@keyframes text-changer2 {
+    0%{font-family: 'Anton';}
+    25%{font-family: 'Shizuru';}
+    50%{font-family: 'Playball';}
+    75%{font-family: 'Bangers';}
+    100%{font-family: 'Pushster';}
+    
+}
+@keyframes text-changer3 {
+  0%{font-family: 'Sen';}
+  25%{font-family: 'Shizuru';}
+  50%{font-family: 'Playball';}
+  75%{font-family: 'Bangers';}
+  100%{font-family: 'Pushster';}
+  
+}
 html,body {
   min-height: 100%;
 }
@@ -37,6 +64,25 @@ a {
   color: black;
   font-weight: 600;
 }
+.a1:hover,.a1:focus {
+  animation-name: text-changer1;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+}
+.a2:hover,.a2:focus {
+  animation-name: text-changer2;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+}
+.a3:hover,.a3:focus {
+  animation-name: text-changer3;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+}
+
 img {
   height: 3vh;
   width: 7vh;
